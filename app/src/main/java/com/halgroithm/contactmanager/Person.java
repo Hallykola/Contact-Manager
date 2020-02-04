@@ -3,7 +3,9 @@ package com.halgroithm.contactmanager;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
     String firstname;
     String lastname;
     String number;
@@ -12,7 +14,7 @@ public class Person {
     String zipcode;
 
 
-    public Person(String firstname, String lastname, String number, String birthday, String address, String zipcode) {
+    public Person (String firstname, String lastname, String number, String birthday, String address, String zipcode) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.number = number;

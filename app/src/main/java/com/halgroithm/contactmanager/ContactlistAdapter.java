@@ -57,9 +57,9 @@ public class ContactlistAdapter extends RecyclerView.Adapter<ContactlistAdapter.
                         switch(i){
                             case 0:
                             {
-                                /*Intent i1 = new Intent(ctx, ViewEditContactActivity.class);
+                               Intent i1 = new Intent(ctx, ViewEditPersonActivity.class);
                                 i1.putExtra("editcontact", AllPersons.get(position));
-                                ctx.startActivity(i1);*/
+                                ctx.startActivity(i1);
                                 break;
 
                             }
