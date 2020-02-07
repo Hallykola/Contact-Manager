@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.io.Serializable;
 
 public class Person implements Serializable {
+    String id;
     String firstname;
     String lastname;
     String number;

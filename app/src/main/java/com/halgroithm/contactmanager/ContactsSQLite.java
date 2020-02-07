@@ -32,7 +32,7 @@ public class ContactsSQLite extends SQLiteOpenHelper {
     public void removedata(String s) {
         db = getWritableDatabase();
         //mydb.delete(DB_TABLE, "recname = '" + s + "'", null);
-        db.delete(ContactDBContract.ContactEntry.TABLE_NAME,"name=?",new String[]{s});
+        db.delete(ContactDBContract.ContactEntry.TABLE_NAME,ContactDBContract.ContactEntry._ID+ "=?",new String[]{s});
     }
     public ArrayList<Person> getAllPersons() {
         db = getWritableDatabase();
@@ -47,9 +47,11 @@ public class ContactsSQLite extends SQLiteOpenHelper {
             int birthdayindex = cur.getColumnIndex(ContactDBContract.ContactEntry.COLUMN_NAME_BIRTHDAY);
             int addressindex = cur.getColumnIndex(ContactDBContract.ContactEntry.COLUMN_NAME_ADDRESS);
             int zipcodeindex = cur.getColumnIndex(ContactDBContract.ContactEntry.COLUMN_NAME_ZIPCODE);
+            int idindex = cur.getColumnIndex(ContactDBContract.ContactEntry._ID);
 
 
             Person person = new Person(cur.getString(firstnameindex),cur.getString(lastnameindex),cur.getString(phoneindex),cur.getString(birthdayindex),cur.getString(addressindex),cur.getString(zipcodeindex));
+            person.id = cur.getString(idindex);
             result.add(person);
            }
         cur.close();

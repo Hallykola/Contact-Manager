@@ -37,7 +37,7 @@ public class ContactlistAdapter extends RecyclerView.Adapter<ContactlistAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, final int position) {
-        holder.personname.setText(AllPersons.get(position).firstname + AllPersons.get(position).lastname);
+        holder.personname.setText(AllPersons.get(position).firstname +" " + AllPersons.get(position).lastname);
         holder.address.setText(AllPersons.get(position).address);
         holder.phone.setText(AllPersons.get(position).number);
         /*File imageFile = new File(Allpersons.get(position).images);
@@ -66,7 +66,7 @@ public class ContactlistAdapter extends RecyclerView.Adapter<ContactlistAdapter.
                             case 1:
                             {
                                 ContactsSQLite sqLite  =new ContactsSQLite(ctx);
-                                sqLite.removedata(AllPersons.get(position).firstname);
+                                sqLite.removedata(AllPersons.get(position).id);
                                 AllPersons.remove(position);
                                 notifyDataSetChanged();
                                 Toast.makeText(ctx,AllPersons.get(position).firstname + AllPersons.get(position).lastname + " deleted",Toast.LENGTH_LONG).show();
