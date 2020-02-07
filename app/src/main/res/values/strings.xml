@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Contact Manager</string>
     <string name="action_settings">Settings</string>
+    <string name="exit">Exit</string>
+    <string name="really_exit">Do you really want to exit?</string>
+    <string name="exit_yes">Yes</string>
+    <string name="not_yet_exit">Not yet</string>
 </resources>

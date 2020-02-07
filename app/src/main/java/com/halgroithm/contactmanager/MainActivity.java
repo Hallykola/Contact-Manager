@@ -1,11 +1,13 @@
 package com.halgroithm.contactmanager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -69,5 +71,47 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        AlertDialog.Builder myfinish = new AlertDialog.Builder(this);
+        myfinish.setTitle(R.string.exit);
+        myfinish.setMessage(getString(R.string.really_exit));
+        myfinish.setPositiveButton(getString(R.string.exit_yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+
+        });
+        myfinish.setNegativeButton(getString(R.string.not_yet_exit), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        myfinish.show();
+    }
+
+    public void out(MenuItem item) {
+        AlertDialog.Builder myfinish = new AlertDialog.Builder(this);
+        myfinish.setTitle(R.string.exit);
+        myfinish.setMessage(getString(R.string.really_exit));
+        myfinish.setPositiveButton(getString(R.string.exit_yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+
+        });
+        myfinish.setNegativeButton(getString(R.string.not_yet_exit), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        myfinish.show();
     }
 }

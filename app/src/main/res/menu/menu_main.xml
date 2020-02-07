@@ -4,7 +4,8 @@
     tools:context="com.halgroithm.contactmanager.MainActivity">
     <item
         android:id="@+id/action_settings"
+        android:onClick="out"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/exit"
         app:showAsAction="never" />
 </menu>
